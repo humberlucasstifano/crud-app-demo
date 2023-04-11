@@ -1,0 +1,29 @@
+<% for(var i = 0; i < tasks.length; i++) { %>
+    <tr>
+        <!-- Display the task index -->
+        <td><%= i + 1 %></td>
+        <!-- Display the task name -->
+        <td><%= tasks[i].name %></td>
+        <!-- Display the task description -->
+        <td><%= tasks[i].task %></td>
+        <!-- Display the task role -->
+        <td><%= tasks[i].role %></td>
+        <!-- Display the task status -->
+        <td><%= tasks[i].status %></td>
+        <td>
+            <!-- Display a button to update the task with a link to the update page -->
+            <a href="/update-task?id=<%= tasks[i]._id%>" class="btn border-shadow update">
+                <span class="text-gradient"><i class="fas fa-pencil-alt"></i></span>
+            </a>
+            <!-- Display a button to delete the task -->
+            <a class="btn border-shadow delete" data-id=<%= tasks[i]._id%> >
+                <span class="text-gradient"><i class="fas fa-times"></i></span>
+            </a>
+        </td>
+    </tr>
+  <% } %>
+
+  <!-- BREAKDOWN -->
+  <!-- The code generates a table row for each task in the tasks array. It uses EJS syntax to embed JavaScript code that loops through the array and generates the HTML for each task. The generated HTML code contains the following elements: -->
+  <!-- <td>: Table data cells for displaying the task index, name, description, role, status, and buttons. -->
+    <!-- <a>: Anchor tags that create buttons to update or delete the task. The update button is a link to the update page, while the delete button has a data-id attribute that stores the ID of the task to be deleted. -->
